@@ -1,4 +1,3 @@
-
 class CartItemModel {
   static const ID = "id";
   static const NAME = "name";
@@ -31,12 +30,10 @@ class CartItemModel {
 
   int get price => _price;
 
-
-
-  CartItemModel.fromMap(Map data){
+  CartItemModel.fromMap(Map data) {
     _id = data[ID];
-    _name =  data[NAME];
-    _image =  data[IMAGE];
+    _name = data[NAME];
+    _image = data[IMAGE];
     _productId = data[PRODUCT_ID];
     _price = data[PRICE];
     _size = data[SIZE];
@@ -44,12 +41,12 @@ class CartItemModel {
   }
 
   Map toMap() => {
-    ID: _id,
-    IMAGE: _image,
-    NAME: _name,
-    PRODUCT_ID: _productId,
-    PRICE: _price,
-    SIZE: _size,
-    COLOR: _color
-  };
+        ID: _id,
+        IMAGE: _image,
+        NAME: _name,
+        PRODUCT_ID: _productId,
+        PRICE: _price,
+        SIZE: _size,
+        COLOR: _color
+      };
 }

@@ -14,7 +14,6 @@ class ProductServices {
         return products;
       });
 
-
   Future<List<ProductModel>> searchProducts({String productName}) {
     // code to convert the first character to uppercase
     String searchKey = productName[0].toUpperCase() + productName.substring(1);
@@ -25,11 +24,11 @@ class ProductServices {
         .endAt([searchKey + '\uf8ff'])
         .getDocuments()
         .then((result) {
-      List<ProductModel> products = [];
-      for (DocumentSnapshot product in result.documents) {
-        products.add(ProductModel.fromSnapshot(product));
-      }
-      return products;
-    });
+          List<ProductModel> products = [];
+          for (DocumentSnapshot product in result.documents) {
+            products.add(ProductModel.fromSnapshot(product));
+          }
+          return products;
+        });
   }
 }

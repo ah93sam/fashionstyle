@@ -10,21 +10,23 @@ class FeaturedCard extends StatelessWidget {
 
   const FeaturedCard({Key key, this.product}) : super(key: key);
 
-
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.all(4),
       child: InkWell(
-        onTap: (){
-          changeScreen(context, ProductDetails(product: product,));
+        onTap: () {
+          changeScreen(
+              context,
+              ProductDetails(
+                product: product,
+              ));
         },
         child: Container(
           decoration: BoxDecoration(
             boxShadow: [
               BoxShadow(
-                color:
-                Color.fromARGB(62, 168, 174, 201),
+                color: Color.fromARGB(62, 168, 174, 201),
                 offset: Offset(0, 9),
                 blurRadius: 14,
               ),
@@ -36,19 +38,18 @@ class FeaturedCard extends StatelessWidget {
               children: <Widget>[
                 Positioned.fill(
                     child: Align(
-                      alignment: Alignment.center,
-                      child: Loading(),
-                    )),
+                  alignment: Alignment.center,
+                  child: Loading(),
+                )),
                 Center(
                   child: FadeInImage.memoryNetwork(
                     placeholder: kTransparentImage,
                     image: product.picture,
                     fit: BoxFit.cover,
-                    height: 220,
-                    width: 200,
+                    height: 100,
+                    width: 100,
                   ),
                 ),
-
                 Align(
                   alignment: Alignment.bottomCenter,
                   child: Container(
@@ -75,25 +76,25 @@ class FeaturedCard extends StatelessWidget {
                           ],
                         ),
                       ),
-
                       child: Padding(
                           padding: const EdgeInsets.only(top: 8.0),
-                          child: Container()
-                      )),
+                          child: Container())),
                 ),
-
                 Align(
                   alignment: Alignment.bottomLeft,
                   child: Padding(
-                      padding: const EdgeInsets.only(left:8.0),
-                      child: RichText(text: TextSpan(children: [
-                        TextSpan(text: '${product.name} \n', style: TextStyle(fontSize: 18)),
-                        TextSpan(text: '\$${product.price / 100} \n', style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
-
-                      ]))
-                  ),
+                      padding: const EdgeInsets.only(left: 8.0),
+                      child: RichText(
+                          text: TextSpan(children: [
+                        TextSpan(
+                            text: '${product.name} \n',
+                            style: TextStyle(fontSize: 18)),
+                        TextSpan(
+                            text: '\$${product.price / 100} \n',
+                            style: TextStyle(
+                                fontSize: 22, fontWeight: FontWeight.bold)),
+                      ]))),
                 )
-
               ],
             ),
           ),

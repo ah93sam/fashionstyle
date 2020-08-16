@@ -2,14 +2,20 @@ import 'package:fashionstyle/models/cart_item.dart';
 import 'package:fashionstyle/models/order.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-class OrderServices{
+class OrderServices {
   String collection = "orders";
   Firestore _firestore = Firestore.instance;
 
-  void createOrder({String userId ,String id,String description,String status ,List<CartItemModel> cart, int totalPrice}) {
+  void createOrder(
+      {String userId,
+      String id,
+      String description,
+      String status,
+      List<CartItemModel> cart,
+      int totalPrice}) {
     List<Map> convertedCart = [];
 
-    for(CartItemModel item in cart){
+    for (CartItemModel item in cart) {
       convertedCart.add(item.toMap());
     }
 
@@ -24,8 +30,7 @@ class OrderServices{
     });
   }
 
-  Future<List<OrderModel>> getUserOrders({String userId}) async =>
-      _firestore
+  Future<List<OrderModel>> getUserOrders({String userId}) async => _firestore
           .collection(collection)
           .where("userId", isEqualTo: userId)
           .getDocuments()
@@ -36,5 +41,4 @@ class OrderServices{
         }
         return orders;
       });
-
 }

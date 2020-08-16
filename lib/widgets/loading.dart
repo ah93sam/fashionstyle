@@ -10,7 +10,6 @@ class Loading extends StatelessWidget {
         child: SpinKitFadingCircle(
           color: black,
           size: 30,
-        )
-    );
+        ));
   }
 }

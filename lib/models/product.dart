@@ -57,12 +57,11 @@ class ProductModel {
     _sale = snapshot.data[SALE];
     _description = snapshot.data[DESCRIPTION] ?? " ";
     _featured = snapshot.data[FEATURED];
-    _price = snapshot.data[PRICE].floor();
+    _price = snapshot.data[PRICE];
     _category = snapshot.data[CATEGORY];
     _colors = snapshot.data[COLORS];
     _sizes = snapshot.data[SIZES];
     _name = snapshot.data[NAME];
     _picture = snapshot.data[PICTURE];
-
   }
 }

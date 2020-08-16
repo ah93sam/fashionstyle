@@ -18,8 +18,12 @@ class ProductCard extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: GestureDetector(
-        onTap: (){
-          changeScreen(context, ProductDetails(product: product,));
+        onTap: () {
+          changeScreen(
+              context,
+              ProductDetails(
+                product: product,
+              ));
         },
         child: Container(
           decoration: BoxDecoration(
@@ -76,7 +80,6 @@ class ProductCard extends StatelessWidget {
                   ),
                   TextSpan(
                     text: product.sale ? 'ON SALE ' : "",
-
                     style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.w400,
